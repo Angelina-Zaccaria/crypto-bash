@@ -1,0 +1,20 @@
+openssl genpkey -algorithm RSA -out private.pem
+cat private.pem
+openssl pkey -in private.pem -noout -text_pub
+openssl pkey -in private.pem -pubout -out public.pem
+cat public.pem
+echo "Let's do cryptography" > plaintext.txt
+openssl pkeyutl -in plaintext.txt -encrypt -pubin -inkey public.pem -out ciphertext.bin
+cat ciphertext.bin
+openssl pkeyutl -in ciphertext.bin -decrypt -inkey private.pem -out plaintext.dec
+cat plaintext.dec
+openssl genpkey -genparam -algorithm EC -out ec_param.pem -pkeyopt ec_paramgen_curve:secp128r1
+cat ec_param.pem
+openssl genpkey -paramfile ec_param.pem -out ec_private.pem -aes-128-cbc -pass pass:hello
+cat ec_private.pem
+openssl pkey -in ec_private.pem
+openssl pkeyutl -in plaintext.txt -sign -inkey ec_private.pem -out signature1
+cat signature1
+openssl pkeyutl -verify -in plaintext.txt -sigfile signature1 -inkey ec_private.pem
+openssl pkeyutl -verify -in plaintext.txt -sigfile signature1 -inkey private.pem
+openssl pkeyutl -in plaintext.txt -sign -pubin -inkey public.pem -out signature2
