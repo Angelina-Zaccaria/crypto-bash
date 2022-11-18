@@ -6,15 +6,15 @@ Asymmetric cryptography, also commonly referred to as public key cryptography, i
 
 Here are a few use cases of public key cryptography:
 * If Alice wants to send a message to Bob that only Bob can read, she can encrypt her plaintext message using Bob's public key. Only Bob can decrypt this message using his private key. When Bob responds to Alice, he encrypts his message using Alice's public key. Now only Alice can then decrypt this message with her own private key.
-* Bob can send a message to Alice and create a digital signature by encrypting the message using his private key. Bob sends both the message and the digital signature to Alice, who can decrypt this signature using Bob's private key to verify that the message is indeed from Bob and was not modified in transit.
+* Bob can send a message to Alice and create a digital signature by encrypting the message using his private key. Bob sends both the message and the digital signature to Alice, who can decrypt this signature using Bob's public key to verify that the message is indeed from Bob and was not modified in transit.
 
 Symmetric encryption algorithms are faster and require less resources than asymmetric algorithms and are therefore better for encrypting large amounts of data quickly. As a result, asymmetric cryptography is often used to conduct a secure key exchange for later use with symmetric algorithms. 
 
 ## Public Key Cryptography in Command Line OpenSSL 
 There are four main commands in OpenSSL that handle public key cryptography:
 * **genpkey** – Generate a private key or parameters to use for key creation 
-* **pkey** – View details about public & private keys and convert them between different encoding formats 
-* **pkeyutl** – Perform operations (encrypt, sign, verify, etc) for a supported public key algorithm
+* **pkey** – View details about public and private keys 
+* **pkeyutl** – Perform operations (ex. encrypt, sign, verify)
 * **pkeyparam** – like pkey, but for parameter files (we won't be using this one)
 
 ## Key Generation

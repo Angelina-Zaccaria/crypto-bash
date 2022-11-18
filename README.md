@@ -26,9 +26,9 @@ Students learn bash scripting basics and apply the cryptography techniques used 
 Students learn how to perform hashing, generate message authentication codes, and generate pseudorandom bytes using command line OpenSSL.
 
 **[Part 6:](part6/part6.md) Exercise 2: Authentication Server**  
-Students apply the knowledge from previous labs to implement a message authentication scenario for secure communications.
+Students apply the knowledge from previous parts to implement a message authentication scenario for secure communications.
 
-**(optional) Part 7: Exercise 3: Algorithm Runtime Comparison**  
-Students apply the knowledge from previous labs and advance their bash skills to analyze the runtimes of different encryption algorithm commands.
+**(optional) [Part 7:](part7/part7.md) Exercise 3: Algorithm Runtime Comparison Demo**  
+Students apply the knowledge from previous parts and advance their bash skills to analyze the runtimes of different encryption algorithm commands.
 
 ## Let's get started! → [Part 1: Setting Up Ubuntu](part1.md)
